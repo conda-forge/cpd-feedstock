@@ -1,5 +1,5 @@
 {% set name = "cpd" %}
-{% set version = "0.5.4" %}
+{% set version = "0.5.5" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/gadomski/cpd/archive/v{{ version }}.tar.gz
-  sha256: 2f2807f9a12bdec288e1e860961f7ffa522f24821c01a7eec0da09eae3fabbb3
+  sha256: 22c1ce67326f93da25a6573100d3d4d7883836f3c7c8c4fbc44c342994aaf90b
 
 build:
   number: 0
