@@ -4,7 +4,7 @@ set -ex
 
 mkdir build
 cd build
-cmake -G "Unix Makefiles" \
+cmake ${CMAKE_ARGS} -G "Ninja" \
       -DCMAKE_INSTALL_PREFIX:PATH="${PREFIX}" \
       -DCMAKE_BUILD_TYPE:STRING=Release \
       -DENABLE_TESTS=ON \
@@ -15,7 +15,13 @@ cmake -G "Unix Makefiles" \
       -DWITH_STRICT_WARNINGS=ON \
       ..
 
-# CircleCI offers two cores.
-make -j $CPU_COUNT
-make install
-make test
+ninja
+ninja install
+if [ "$CONDA_BUILD_CROSS_COMPILATION" == "1" ]; then
+
+    echo "Cant run tests because we are cross compiling"
+else
+    ninja test
+
+fi
+
