@@ -19,9 +19,9 @@ requirements:
     - {{ compiler('cxx') }}
     - ninja
     - eigen
+  host:
     - fgt
   run:
-    - fgt
     - eigen
 
 test:
