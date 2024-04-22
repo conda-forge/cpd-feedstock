@@ -8,7 +8,7 @@ package:
 source:
   url: https://github.com/gadomski/cpd/archive/v{{ version }}.tar.gz
   sha256: 22c1ce67326f93da25a6573100d3d4d7883836f3c7c8c4fbc44c342994aaf90b
-  source:
+  patches:
     - fgt-private-linkage.patch
 
 build:
